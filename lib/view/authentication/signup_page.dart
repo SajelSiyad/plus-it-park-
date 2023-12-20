@@ -17,7 +17,6 @@ class SignUP extends HookConsumerWidget {
     final nameController = useTextEditingController();
     final emailController = useTextEditingController();
     final passwordController = useTextEditingController();
-    final confirmPasswordController = useTextEditingController();
 
     Future<void> signUp() async {
       final data = ref.read(authenticationProvider.notifier).signup(
@@ -132,25 +131,6 @@ class SignUP extends HookConsumerWidget {
                         color: Colors.white70,
                       ),
                       hintText: "Password",
-                      hintStyle: TextStyle(color: Colors.white70),
-                    ),
-                  ),
-                  SizedBox(
-                    height: R.width(13, context),
-                  ),
-                  TextField(
-                    controller: confirmPasswordController,
-                    cursorColor: Colors.white,
-                    style: const TextStyle(color: Colors.white),
-                    decoration: const InputDecoration(
-                      fillColor: Colors.white38,
-                      filled: true,
-                      border: OutlineInputBorder(borderSide: BorderSide.none),
-                      prefixIcon: Icon(
-                        Icons.lock_person_rounded,
-                        color: Colors.white70,
-                      ),
-                      hintText: "Confirm Password",
                       hintStyle: TextStyle(color: Colors.white70),
                     ),
                   ),
